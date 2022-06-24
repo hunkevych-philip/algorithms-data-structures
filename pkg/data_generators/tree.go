@@ -20,16 +20,6 @@ func InitTestingTree() *tree.Node {
 	myTree.Add(122)
 	myTree.Add(32)
 
-	// ^^^^^^^^^^^^^^^
-	//			100
-	//	       /   \
-	//	     50	   123
-	// 		/	   /  \
-	//	  32	122   124
-
-	// BFS 100 50 123 32 122 124
-	// DFS 100 50 32 123 122 124
-
 	return myTree
 }
 
