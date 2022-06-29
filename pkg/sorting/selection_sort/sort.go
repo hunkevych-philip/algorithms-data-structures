@@ -1,18 +1,17 @@
 package selection_sort
 
-import "math"
-
 func Sort(s []int) []int {
-	iSmallest, vSmallest := 0, math.MaxInt
+	n := len(s)
 
-	for i := range s {
-		for j := i; j < len(s); j++ {
-			if s[j] < vSmallest {
-				iSmallest, vSmallest = j, s[j]
+	for i := 0; i < n; i++ {
+		m := i // The lowest value's index
+
+		for j := i; j < n; j++ {
+			if s[j] < s[m] {
+				m = j
 			}
 		}
-		s[i], s[iSmallest] = s[iSmallest], s[i]
-		vSmallest = math.MaxInt
+		s[i], s[m] = s[m], s[i]
 	}
 
 	return s
